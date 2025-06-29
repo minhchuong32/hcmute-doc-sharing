@@ -1,4 +1,4 @@
-import Document from "../models/Document.js";
+import Document from "../models/document.model.js";
 
 const uploadDocument = async (req, res) => {
   const { title, description, subject, fileUrl } = req.body;

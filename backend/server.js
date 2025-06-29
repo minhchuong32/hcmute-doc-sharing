@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
 
-// import authRoutes from "./routes/authRoutes.js";
-// import documentRoutes from "./routes/documentRoutes.js";
+import authRoutes from "./routes/auth.routes.js";
+import documentRoutes from "./routes/document.routes.js";
 
 dotenv.config();
 connectDB();
@@ -14,8 +14,8 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-// app.use("/api/auth", authRoutes);
-// app.use("/api/docs", documentRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/docs", documentRoutes);
 
 // Default route
 app.get("/", (req, res) => {
